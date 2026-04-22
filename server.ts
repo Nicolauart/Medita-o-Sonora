@@ -119,6 +119,8 @@ async function startServer() {
       server: { middlewareMode: true },
       appType: "spa",
     });
+    // Serve public folder explicitly if Vite doesn't catch it
+    app.use(express.static("public"));
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), "dist");
