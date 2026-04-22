@@ -41,8 +41,8 @@ const PhoneMockup = () => {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             onError={(e) => {
-              // Fallback to a themed image if the file hasn't been uploaded yet or naming is causing issues
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/gold_meditation/300/300";
+              console.error("Erro: hero-meditation.png não encontrada em /public");
+              e.currentTarget.style.display = 'none';
             }}
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
@@ -64,7 +64,8 @@ const PhoneMockup = () => {
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = `https://picsum.photos/seed/sleep${i}/80`;
+                    console.error(`Erro: ${track.img} não encontrada`);
+                    e.currentTarget.style.opacity = '0';
                   }}
                 />
               </div>
@@ -215,7 +216,10 @@ export default function App() {
                alt="Logo" 
                className="w-full h-full object-cover" 
                referrerPolicy="no-referrer" 
-               onError={(e) => { e.currentTarget.src = "https://picsum.photos/seed/sound_zen/100/100"; }}
+               onError={(e) => { 
+                 console.error("Erro: logo.png não encontrada");
+                 e.currentTarget.style.opacity = '0.2';
+               }}
              />
            </div>
            <span className="font-serif text-xl font-bold tracking-tight">Meditação Sonora</span>
@@ -418,9 +422,8 @@ export default function App() {
                             className={`w-full h-full object-cover transition-transform duration-1000 ${isActive ? 'scale-100 group-hover:scale-110' : 'scale-110'}`} 
                             referrerPolicy="no-referrer" 
                             onError={(e) => { 
-                                const target = e.target as HTMLImageElement;
-                                target.src = `https://picsum.photos/seed/${item.label.replace(/\s+/g, '_')}/800/800`;
-                                target.onerror = null; 
+                                console.error(`ERRO 404: A imagem ${item.src} não foi encontrada.`);
+                                e.currentTarget.style.background = '#1a1a1a';
                             }}
                           />
                       </motion.div>
