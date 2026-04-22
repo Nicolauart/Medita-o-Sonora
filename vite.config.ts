@@ -8,7 +8,6 @@ export default defineConfig(({mode}) => {
   return {
     plugins: [react(), tailwindcss()],
     publicDir: 'public',
-    base: './',
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -16,7 +15,6 @@ export default defineConfig(({mode}) => {
       outDir: 'dist',
       assetsDir: 'assets',
       copyPublicDir: true,
-      sourcemap: false,
     },
     resolve: {
       alias: {

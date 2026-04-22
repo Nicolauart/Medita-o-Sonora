@@ -175,12 +175,12 @@ export default function App() {
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
   
   const carouselItems = [
-    { src: "/reparador-528.png", label: "Reparador 528Hz" },
-    { src: "/restaurador-432.png", label: "Restaurador 432Hz" },
-    { src: "/curativo-528.png", label: "Curativo 528Hz" },
-    { src: "/cortisol-detox.png", label: "Cortisol Detox" },
-    { src: "/sono-profundo.png", label: "Sono Profundo" },
-    { src: "/reduzir-cortisol.png", label: "Reduzir Cortisol" }
+    { src: "reparador-528.png", label: "Reparador 528Hz" },
+    { src: "restaurador-432.png", label: "Restaurador 432Hz" },
+    { src: "curativo-528.png", label: "Curativo 528Hz" },
+    { src: "cortisol-detox.png", label: "Cortisol Detox" },
+    { src: "sono-profundo.png", label: "Sono Profundo" },
+    { src: "reduzir-cortisol.png", label: "Reduzir Cortisol" }
   ];
   const [centerIndex, setCenterIndex] = useState(2);
 
