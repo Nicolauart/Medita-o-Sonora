@@ -171,6 +171,69 @@ const StatCounter = ({ target, label, icon: Icon }: { target: number; label: str
   );
 };
 
+const PLAYLISTS_DATA: Playlist[] = [
+  {
+    id: 1,
+    title: "Vácuo Profundo",
+    description: "Uma imersão completa no vácuo sonoro para silenciar a mente.",
+    category: "sono",
+    duration: "8h",
+    tracks: 12,
+    cover: "/sono-profundo.png",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Éter Interior",
+    description: "Frequências transcendentais para elevar a consciência antes do sono.",
+    category: "meditacao",
+    duration: "3h",
+    tracks: 8,
+    cover: "/restaurador-432.png",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Nebulosa do Descanso",
+    description: "Sons etéreos de nebulosas distantes focados no relaxamento profundo.",
+    category: "sonoro",
+    duration: "6h",
+    tracks: 15,
+    cover: "/curativo-528.png",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Ressonância Lunar",
+    description: "Melodias lunares captadas em pureza absoluta para paz mental.",
+    category: "sono",
+    duration: "4h",
+    tracks: 10,
+    cover: "/reparador-528.png",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Sussurros de Orion",
+    description: "Ambientes sonoros inspirados na constelação de Oríon.",
+    category: "sonoro",
+    duration: "5h",
+    tracks: 14,
+    cover: "/cortisol-detox.png",
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Frequência 432Hz",
+    description: "A frequência da Terra para cura e equilíbrio energético.",
+    category: "sonoro",
+    duration: "7h",
+    tracks: 20,
+    cover: "/reduzir-cortisol.png",
+    featured: false,
+  },
+];
+
 export default function App() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
@@ -186,10 +249,11 @@ export default function App() {
   const [centerIndex, setCenterIndex] = useState(2);
 
   useEffect(() => {
-    fetch(`/api/playlists?category=${activeCategory}`)
-      .then(res => res.json())
-      .then(data => setPlaylists(data.data))
-      .catch(err => console.error("Error fetching playlists:", err));
+    // Agora carregamos os dados localmente para garantir compatibilidade com Netlify
+    const filtered = activeCategory === "all" 
+      ? PLAYLISTS_DATA 
+      : PLAYLISTS_DATA.filter(p => p.category === activeCategory);
+    setPlaylists(filtered);
   }, [activeCategory]);
 
   const categories = [
