@@ -36,7 +36,7 @@ const PhoneMockup = () => {
         <div className="text-sm font-serif font-bold text-white/90">Meditação Sonora</div>
         <div className="w-full aspect-square rounded-2xl overflow-hidden bg-white/5 relative">
           <img 
-            src="/hero-meditation.webp" 
+            src="https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970511/hero-meditation_wgwlrk.webp" 
             alt="Now Playing" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -53,9 +53,9 @@ const PhoneMockup = () => {
         </div>
         <div className="space-y-3 px-1 mt-[5px] ml-0">
           {[
-            { title: "Sueño Profundo y Purificador 528 Hz", time: "8:00:00", img: "/track-cortisol.webp" },
-            { title: "Sono Restaurador 432 Hz", time: "10:00:00", img: "/track-meditation-1.webp" },
-            { title: "Suenõ Curativo 528 Hz", time: "12:00:00", img: "/track-meditation-2.webp" }
+            { title: "Sueño Profundo y Purificador 528 Hz", time: "8:00:00", img: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970505/track-cortisol_s1bwly.webp" },
+            { title: "Sono Restaurador 432 Hz", time: "10:00:00", img: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970506/track-meditation-1_lucmwo.webp" },
+            { title: "Suenõ Curativo 528 Hz", time: "12:00:00", img: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970405/track-meditation-2_fuzpl4.webp" }
           ].map((track, i) => (
             <div key={i} className="flex items-center gap-3 p-2 rounded-xl bg-white/[0.03]">
               <div className="w-8 h-8 rounded-lg bg-white/5 overflow-hidden">
@@ -179,7 +179,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "sono",
     duration: "8h",
     tracks: 12,
-    cover: "/sono-profundo.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970507/sono-profundo_f15ogz.webp",
     featured: true,
   },
   {
@@ -189,7 +189,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "meditacao",
     duration: "3h",
     tracks: 8,
-    cover: "/restaurador-432.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970507/restaurador-432_o5awzh.webp",
     featured: true,
   },
   {
@@ -199,7 +199,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "sonoro",
     duration: "6h",
     tracks: 15,
-    cover: "/curativo-528.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970512/curativo-528_fdsjsm.webp",
     featured: false,
   },
   {
@@ -209,7 +209,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "sono",
     duration: "4h",
     tracks: 10,
-    cover: "/reparador-528.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970508/reparador-528_x9k5qb.webp",
     featured: true,
   },
   {
@@ -219,7 +219,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "sonoro",
     duration: "5h",
     tracks: 14,
-    cover: "/cortisol-detox.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970511/cortisol-detox_gjeyqw.webp",
     featured: false,
   },
   {
@@ -229,7 +229,7 @@ const PLAYLISTS_DATA: Playlist[] = [
     category: "sonoro",
     duration: "7h",
     tracks: 20,
-    cover: "/reduzir-cortisol.webp",
+    cover: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970508/reduzir-cortisol_k2odgx.webp",
     featured: false,
   },
 ];
@@ -239,12 +239,12 @@ export default function App() {
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
   
   const carouselItems = [
-    { src: "/reparador-528.webp", label: "Reparador 528Hz" },
-    { src: "/restaurador-432.webp", label: "Restaurador 432Hz" },
-    { src: "/curativo-528.webp", label: "Curativo 528Hz" },
-    { src: "/cortisol-detox.webp", label: "Cortisol Detox" },
-    { src: "/sono-profundo.webp", label: "Sono Profundo" },
-    { src: "/reduzir-cortisol.webp", label: "Reduzir Cortisol" }
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970508/reparador-528_x9k5qb.webp", label: "Reparador 528Hz" },
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970507/restaurador-432_o5awzh.webp", label: "Restaurador 432Hz" },
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970512/curativo-528_fdsjsm.webp", label: "Curativo 528Hz" },
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970511/cortisol-detox_gjeyqw.webp", label: "Cortisol Detox" },
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970507/sono-profundo_f15ogz.webp", label: "Sono Profundo" },
+    { src: "https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970508/reduzir-cortisol_k2odgx.webp", label: "Reduzir Cortisol" }
   ];
   const [centerIndex, setCenterIndex] = useState(2);
 
@@ -276,7 +276,7 @@ export default function App() {
         <div className="flex items-center gap-4">
            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-white/5">
              <img 
-               src="/logo.webp" 
+               src="https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970510/logo_fiy93u.webp" 
                alt="Logo" 
                className="w-full h-full object-cover" 
                referrerPolicy="no-referrer" 
@@ -557,7 +557,7 @@ export default function App() {
           <div className="flex items-center gap-4">
              <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center bg-white/5">
                 <img 
-                    src="/logo.webp" 
+                    src="https://res.cloudinary.com/ddbzzt0tp/image/upload/v1776970510/logo_fiy93u.webp" 
                     alt="Logo" 
                     className="w-full h-full object-cover" 
                     referrerPolicy="no-referrer" 
